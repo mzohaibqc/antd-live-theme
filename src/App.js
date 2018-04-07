@@ -24,17 +24,23 @@ class App extends Component {
         <Row>
           <Layout>
             <Header className="header">
-              <div className="logo" />
-              <Menu
-                theme="dark"
-                mode="horizontal"
-                defaultSelectedKeys={['2']}
-                style={{ lineHeight: '64px' }}
-              >
-                <Menu.Item key="1">nav 1</Menu.Item>
-                <Menu.Item key="2">nav 2</Menu.Item>
-                <Menu.Item key="3">nav 3</Menu.Item>
-              </Menu>
+              <Row type="flex">
+                <Col xs={24} sm={6}>
+                  <div className="logo" >Live Theme</div>
+                </Col>
+                <Col xs={0} sm={18}>
+                  <Menu
+                    theme="dark"
+                    mode="horizontal"
+                    defaultSelectedKeys={['1']}
+                    style={{ lineHeight: '64px' }}
+                  >
+                    <Menu.Item key="1">nav 1</Menu.Item>
+                    <Menu.Item key="2">nav 2</Menu.Item>
+                    <Menu.Item key="3">nav 3</Menu.Item>
+                  </Menu>
+                </Col>
+              </Row>
             </Header>
             <Layout>
               <Sider width={200} style={{ background: '#fff' }}>

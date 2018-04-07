@@ -1,6 +1,5 @@
 import React from 'react';
 import { message } from 'antd';
-import VarColorPicker from './VarColorPicker';
 import 'rc-color-picker/assets/index.css';
 
 
