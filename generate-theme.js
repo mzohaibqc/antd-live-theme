@@ -67,8 +67,8 @@ render(content).then(({ css }) => {
       const colorToNames = mappings['cTn'];
       Object.keys(colorToNames).forEach(color => {
         const varName = colorToNames[color];
-        if (varName in variables) {
-          console.log(varName, color, color.length);
+        if (varName in variables || varName.includes('primary')) {
+          // console.log(varName, color, color.length);
           color = color.replace('(', '\\(').replace(')', '\\)');
           css = css.replace(new RegExp(`${color}`, 'g'), `${varName}`);
         }
@@ -139,6 +139,7 @@ function replacePrimaryColors() {
   });
   Object.keys(mappings['nTc']).forEach(varName => {
     if (varName !== '@primary-color' && varName.includes('@primary-')) {
+      //e.g. varName = '@primary-1', color = 'color(~`colorPalette("@{primary-color}", 1)`)'
       const color = mappings['nTc'][varName];
       delete mappings['cTn'][color];
       mappings['cTn'][varName] = color;
@@ -148,12 +149,25 @@ function replacePrimaryColors() {
   css = `${scripts}\n@primary-color: ${mappings['nTc']['@primary-color']};\n${css}`;
   return render(css).then(({ css }) => {
     css = css.replace(/(\/.*\/)/g, '');
+    console.log(css);
     const regex = /.(?=\S*['-])([.a-zA-Z0-9'-]+)\ {\n\ \ color:\ (.*);/g;
     const vars = getMatches(css, regex);
+    console.log(vars);
     const classes = Object.keys(vars);
     classes.forEach((cls, index) => {
-      if (cls.match('primary-\d\d?')) {
-        const colorName = mappings['cTn'][cls]
+      if (cls.match(/primary-\d\d?/)) {
+        const colorName = mappings['cTn'][cls];
+        /* here colorName will be like 'color(~`colorPalette("@{primary-color}", 1)`)'
+           So we will delete colorToNames 'cTn' mappings entry for
+           {
+             '@primary-1': 'color(~`colorPalette("@{primary-color}", 1)`)'
+           }
+           and will replace with
+           {
+             '#e6f7ff': 'color(~`colorPalette("@{primary-color}", 1)`)' // some color code
+           }
+        */
+        console.log(vars[cls], colorName);
         delete mappings['cTn'][cls];
         mappings['cTn'][vars[cls]] = colorName;
       } else {

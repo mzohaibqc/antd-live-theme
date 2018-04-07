@@ -5,20 +5,20 @@
   "dependencies": {
     "antd": "^3.4.0",
     "babel-plugin-import": "^1.7.0",
-    "npm-watch": "^0.3.0",
     "rc-color-picker": "^1.2.6",
     "react": "^16.3.1",
     "react-app-rewire-less": "^2.1.1",
     "react-app-rewired": "^1.5.0",
     "react-dom": "^16.3.1",
-    "react-scripts": "^1.1.4",
-    "run-all": "^1.0.1"
+    "react-scripts": "^1.1.4"
   },
   "watch": {
     "colors": {
-      "patterns": ["src/styles"],
-      "extensions": "less",
-      "ignore": "src/vendor/external.min.js",
+      "patterns": [
+        "src/styles/variables.less",
+        "generate-colors.js"
+      ],
+      "extensions": "less,js",
       "quiet": true,
       "legacyWatch": true
     }
@@ -27,8 +27,13 @@
     "start": "run-p watch start-app",
     "start-app": "react-app-rewired start",
     "colors": "node generate-theme.js",
-    "build": "react-app-rewired build",
+    "build": "react-app-rewired build && npm run colors && cp public/color.less build/color.less",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
-    "watch": "npm-watch colors"  }
+    "watch": "npm-watch colors"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.2",
+    "npm-watch": "^0.3.0"
+  }
 }
