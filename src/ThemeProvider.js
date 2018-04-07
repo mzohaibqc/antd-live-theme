@@ -21,30 +21,14 @@ class ThemeProvider extends React.Component {
   }
 
   handleColorChange = (varname, color) => {
-    const changeColor = () => {
-      const vars = this.state.vars;
-      if (varname) vars[varname] = color;
-      window.less.modifyVars(vars).then(() => {
-        // message.success(`Theme updated successfully`);
-        this.setState({ vars });
-      }).catch(error => {
-        message.error(`Failed to update theme`);
-      });
-    };
-
-    const lessUrl = 'https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js';
-
-    if (this.lessLoaded) {
-      changeColor();
-    } else {
-      window.less = {
-        async: true,
-      };
-      this.loadScript(lessUrl).then(() => {
-        this.lessLoaded = true;
-        changeColor();
-      });
-    }
+    const vars = this.state.vars;
+    if (varname) vars[varname] = color;
+    window.less.modifyVars(vars).then(() => {
+      // message.success(`Theme updated successfully`);
+      this.setState({ vars });
+    }).catch(error => {
+      message.error(`Failed to update theme`);
+    });
   }
 
   onChangeComplete = (varname, color) => {
