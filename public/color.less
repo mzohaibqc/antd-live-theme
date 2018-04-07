@@ -1,4 +1,5 @@
-@text-color-secondary: #dddddd;
+@heading-color: #fa8c16;
+@text-color-secondary: #eb2f96;
 @text-color: #cccccc;
 @primary-color: #00375B;
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
@@ -1387,7 +1388,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 abbr[title],
 abbr[data-original-title] {
@@ -1484,7 +1485,7 @@ mark {
   color: @text-color;
 }
 .ant-alert-with-description .ant-alert-message {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-alert-banner {
   border-radius: 0;
@@ -2379,7 +2380,7 @@ mark {
   border-radius: 2px 2px 0 0;
 }
 .ant-card-head-title {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-card-head .ant-tabs-bar {
   border-bottom: 1px solid #e8e8e8;
@@ -2415,7 +2416,7 @@ mark {
   background: #fafafa;
 }
 .ant-card-meta-title {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-card-meta-description {
   color: @text-color-secondary;
@@ -2594,7 +2595,7 @@ mark {
   border-radius: 0 0 4px 4px;
 }
 .ant-collapse > .ant-collapse-item > .ant-collapse-header {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-collapse-content {
   color: @text-color;
@@ -2683,7 +2684,7 @@ mark {
 .ant-calendar-header .ant-calendar-decade-select,
 .ant-calendar-header .ant-calendar-year-select,
 .ant-calendar-header .ant-calendar-month-select {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-calendar-header .ant-calendar-prev-century-btn,
 .ant-calendar-header .ant-calendar-next-century-btn,
@@ -3010,7 +3011,7 @@ li.ant-calendar-time-picker-select-option-disabled:hover {
   background: transparent;
 }
 .ant-calendar-time .ant-calendar-day-select {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-calendar-time .ant-calendar-footer .ant-calendar-time-picker-btn-disabled {
   color: rgba(0, 0, 0, 0.25);
@@ -3029,7 +3030,7 @@ li.ant-calendar-time-picker-select-option-disabled:hover {
 .ant-calendar-month-panel-header .ant-calendar-month-panel-decade-select,
 .ant-calendar-month-panel-header .ant-calendar-month-panel-year-select,
 .ant-calendar-month-panel-header .ant-calendar-month-panel-month-select {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-calendar-month-panel-header .ant-calendar-month-panel-prev-century-btn,
 .ant-calendar-month-panel-header .ant-calendar-month-panel-next-century-btn,
@@ -3079,7 +3080,7 @@ li.ant-calendar-time-picker-select-option-disabled:hover {
 .ant-calendar-year-panel-header .ant-calendar-year-panel-decade-select,
 .ant-calendar-year-panel-header .ant-calendar-year-panel-year-select,
 .ant-calendar-year-panel-header .ant-calendar-year-panel-month-select {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-calendar-year-panel-header .ant-calendar-year-panel-prev-century-btn,
 .ant-calendar-year-panel-header .ant-calendar-year-panel-next-century-btn,
@@ -3128,7 +3129,7 @@ li.ant-calendar-time-picker-select-option-disabled:hover {
 .ant-calendar-decade-panel-header .ant-calendar-decade-panel-decade-select,
 .ant-calendar-decade-panel-header .ant-calendar-decade-panel-year-select,
 .ant-calendar-decade-panel-header .ant-calendar-decade-panel-month-select {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-century-btn,
 .ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-century-btn,
@@ -3180,7 +3181,7 @@ li.ant-calendar-time-picker-select-option-disabled:hover {
 }
 .ant-divider-horizontal.ant-divider-with-text {
   background: transparent;
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-divider-horizontal.ant-divider-with-text:before,
 .ant-divider-horizontal.ant-divider-with-text:after {
@@ -3188,7 +3189,7 @@ li.ant-calendar-time-picker-select-option-disabled:hover {
 }
 .ant-divider-horizontal.ant-divider-with-text-left {
   background: transparent;
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-divider-horizontal.ant-divider-with-text-left:before {
   border-top: 1px solid #e8e8e8;
@@ -3198,7 +3199,7 @@ li.ant-calendar-time-picker-select-option-disabled:hover {
 }
 .ant-divider-horizontal.ant-divider-with-text-right {
   background: transparent;
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-divider-horizontal.ant-divider-with-text-right:before {
   border-top: 1px solid #e8e8e8;
@@ -3341,7 +3342,7 @@ li.ant-calendar-time-picker-select-option-disabled:hover {
   color: @text-color;
 }
 .ant-form-item-label label {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-form-explain,
 .ant-form-extra {
@@ -3820,7 +3821,7 @@ form .ant-upload {
   border-bottom: 1px solid #e8e8e8;
 }
 .ant-list-vertical .ant-list-item-meta-title {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-list-vertical .ant-list-item-content {
   color: @text-color;
@@ -4234,7 +4235,7 @@ form .ant-upload {
   color: @text-color;
 }
 .ant-modal-title {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-modal-content {
   background-color: #fff;
@@ -4267,7 +4268,7 @@ form .ant-upload {
   background-color: @text-color;
 }
 .ant-confirm-body .ant-confirm-title {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-confirm-body .ant-confirm-content {
   color: @text-color;
@@ -4294,7 +4295,7 @@ form .ant-upload {
   background: #fff;
 }
 .ant-notification-notice-message {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-notification-notice-message-single-line-auto-margin {
   background-color: transparent;
@@ -4462,7 +4463,7 @@ form .ant-upload {
 }
 .ant-popover-title {
   border-bottom: 1px solid #e8e8e8;
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-popover-inner-content {
   color: @text-color;
@@ -4931,7 +4932,7 @@ form .ant-upload {
   background: @primary-color;
 }
 .ant-steps-item-process > .ant-steps-item-content > .ant-steps-item-title {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-steps-item-process > .ant-steps-item-content > .ant-steps-item-title:after {
   background-color: #e8e8e8;
@@ -5068,7 +5069,7 @@ form .ant-upload {
 }
 .ant-table-thead > tr > th {
   background: #fafafa;
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
   border-bottom: 1px solid #e8e8e8;
 }
 .ant-table-thead > tr > th[colspan] {
@@ -5371,7 +5372,7 @@ tr.ant-table-expanded-row:hover {
   color: @text-color-secondary;
 }
 .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab .anticon-close:hover {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-tabs-extra-content .ant-tabs-new-tab {
   border-radius: 2px;
@@ -5470,7 +5471,7 @@ tr.ant-table-expanded-row:hover {
   color: @text-color-secondary;
 }
 .ant-tag .anticon-cross:hover {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-tag-has-color {
   border-color: transparent;
@@ -6065,7 +6066,7 @@ li.ant-tree-treenode-disabled > .ant-tree-node-content-wrapper:hover {
   color: color(~`colorPalette("@{primary-color}", 5)`);
 }
 .ant-upload.ant-upload-drag p.ant-upload-text {
-  color: rgba(0, 0, 0, 0.85);
+  color: @heading-color;
 }
 .ant-upload.ant-upload-drag p.ant-upload-hint {
   color: @text-color-secondary;

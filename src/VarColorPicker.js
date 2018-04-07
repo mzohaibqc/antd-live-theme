@@ -5,18 +5,18 @@ class VarColorPicker extends Component {
   state = { color: this.props.defaultColor }
   handleChange = ({ color }) => {
     this.setState({ color });
-    this.props.handleColorChange(this.props.varName, color);
+    this.props.onChangeComplete(this.props.varName, color);
   };
 
   render() {
     return (
-     <ColorPicker
-              animation="slide-up"
-              color={this.state.color}
-              defaultColor={this.props.defaultColor}
-              onClose={this.handleChange}
-              placement="bottomRight"
-            />
+      <ColorPicker
+        animation="slide-up"
+        color={this.state.color}
+        defaultColor={this.props.defaultColor}
+        onClose={this.handleChange}
+        placement="bottomRight"
+      />
     );
   }
 }

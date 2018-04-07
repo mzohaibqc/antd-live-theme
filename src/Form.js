@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import {
-  Form, Select, Switch, Radio,
-  Slider, Button, Upload, Icon, Rate, DatePicker
+  Form, Select, Switch, Radio, Card,
+  Button, Upload, Icon, DatePicker, Row, Col
 } from 'antd';
 
 import moment from 'moment';
+import ThemeProvider from './ThemeProvider';
+import VarColorPicker from './VarColorPicker';
+
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -12,6 +15,15 @@ const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
 class MyForm extends Component {
+
+  state = {
+    vars: {
+      '@primary-color': '#00375B',
+      '@text-color': '#4D4D4D',
+      '@text-color-secondary': '#eb2f96',
+      '@heading-color': '#fa8c16'
+    }
+  }
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -27,14 +39,43 @@ class MyForm extends Component {
     }
     return e && e.fileList;
   }
+  onChangeComplete = (varName, color) => {
+    const { vars } = this.state;
+    vars[varName] = color;
+    this.setState({ vars });
+    // this.themeProvider.handleColorChange();
+  }
   render() {
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 14 },
     };
+    const colorPickers = Object.keys(this.state.vars).reduce((prev, varName) => {
+      prev[varName] = <VarColorPicker key={varName} defaultColor={this.state.vars[varName]} varName={varName} onChangeComplete={this.onChangeComplete} />
+      return prev;
+    }, {});
     return (
       <Form onSubmit={this.handleSubmit}>
+        <ThemeProvider vars={this.state.vars} ref={node => this.themeProvider = node} />
+        <FormItem
+          {...formItemLayout}
+          label="Colors"
+        >
+          <Card title="Theme" style={{ width: 300 }}>
+            <Row>
+              <Col xs={16}>Primary Color</Col>
+              <Col xs={8}>{colorPickers['@primary-color']}</Col>
+              <Col xs={16}>Text Color</Col>
+              <Col xs={8}>{colorPickers['@text-color']}</Col>
+              <Col xs={16}>Text Secondary Color</Col>
+              <Col xs={8}>{colorPickers['@text-color-secondary']}</Col>
+              <Col xs={16}>Headings Color</Col>
+              <Col xs={8}>{colorPickers['@heading-color']}</Col>
+              <Col xs={24}><Button type="primary" onClick={() => this.themeProvider.handleColorChange()}>Change Theme</Button></Col>
+            </Row>
+          </Card>
+        </FormItem>
         <FormItem
           {...formItemLayout}
           label="Select[multiple]"

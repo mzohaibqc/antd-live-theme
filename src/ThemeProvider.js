@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { message } from 'antd';
 import VarColorPicker from './VarColorPicker';
 import 'rc-color-picker/assets/index.css';
 
 
-class ThemeProvider extends Component {
+class ThemeProvider extends React.Component {
   state = { vars: this.props.vars }
 
   componentDidMount = () => {
@@ -26,7 +26,7 @@ class ThemeProvider extends Component {
       const vars = this.state.vars;
       if (varname) vars[varname] = color;
       window.less.modifyVars(vars).then(() => {
-        message.success(`Theme updated successfully`);
+        // message.success(`Theme updated successfully`);
         this.setState({ vars });
       }).catch(error => {
         message.error(`Failed to update theme`);
@@ -48,13 +48,12 @@ class ThemeProvider extends Component {
     }
   }
 
+  onChangeComplete = (varname, color) => {
+    this.handleColorChange(varname, color);
+  }
+
   render() {
-    const colorPickers = Object.keys(this.state.vars).map(varName => {
-      return (
-        <VarColorPicker key={varName} defaultColor={this.state.vars[varName]} varName={varName} handleColorChange={this.handleColorChange} />
-      );
-    })
-    return colorPickers;
+    return null;
   }
 }
 
