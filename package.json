@@ -16,7 +16,7 @@
   "watch": {
     "colors": {
       "patterns": [
-        "src/styles/variables.less",
+        "src/styles",
         "generate-colors.js"
       ],
       "extensions": "less,js",
@@ -38,6 +38,7 @@
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "bundle-less": "^0.0.3",
     "gh-pages": "^1.1.0",
     "npm-run-all": "^4.1.2",
     "npm-watch": "^0.3.0"

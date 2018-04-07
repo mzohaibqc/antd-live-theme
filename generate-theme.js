@@ -5,8 +5,11 @@ const path = require('path');
 const glob = require('glob');
 const postcss = require('postcss');
 const less = require('less');
+const bundleLess = require('bundle-less');
 
 const antd = path.resolve(__dirname, './node_modules/antd/');
+const defaultLess = path.join(antd, 'lib/style/themes/default.less');
+const defaultLessColors = fs.readFileSync(defaultLess).toString();
 const themeFile = path.join(__dirname, './src/styles/variables.less');
 const variables = getLessVars(themeFile);
 const bezierEasing = fs.readFileSync(path.join(antd, 'lib/style/color/bezierEasing.less')).toString();
@@ -16,6 +19,18 @@ const colorPalette = fs.readFileSync(path.join(antd, 'lib/style/color/colorPalet
   .replace('@import "bezierEasing";', '')
   .replace('@import "tinyColor";', '');
 const scripts = `${bezierEasing}\n${tinyColor}\n${colorPalette}\n`;
+const entry = path.join(antd, 'lib/style/index.less');
+let content = fs.readFileSync(entry).toString();
+const styles = glob.sync(path.join(antd, 'lib/*/style/index.less'));
+content += '\n';
+styles.forEach((style) => {
+  content += `@import "${style}";\n`;
+});
+const indexFile = path.join(__dirname, './src/styles/index.less');
+const customStyles = fs.readFileSync(indexFile).toString();
+content += `\n${customStyles}`;
+content += `\n${defaultLessColors}`;
+
 const reducePlugin = postcss.plugin('reducePlugin', () => {
   const cleanRule = (rule) => {
     if (rule.selector.startsWith('.main-color .palatte-')) {
@@ -49,13 +64,6 @@ const reducePlugin = postcss.plugin('reducePlugin', () => {
     css.walkComments(c => c.remove());
   };
 });
-const entry = path.join(antd, 'lib/style/index.less');
-let content = fs.readFileSync(entry).toString();
-const styles = glob.sync(path.join(antd, 'lib/*/style/index.less'));
-content += '\n';
-styles.forEach((style) => {
-  content += `@import "${style}";\n`;
-});
 
 render(content).then(({ css }) => {
   return postcss([
@@ -79,6 +87,7 @@ render(content).then(({ css }) => {
         css = `${varName}: ${variables[varName]};\n${css}`;
       });
       fs.writeFileSync(path.resolve(__dirname, './public/color.less'), css);
+      console.log('color.less generated successfully');
     });
   })
   .catch(error => {
@@ -88,7 +97,6 @@ render(content).then(({ css }) => {
 
 
 function generateColorMappings() {
-  const defaultLess = path.join(antd, 'lib/style/themes/default.less');
   const colorFile = path.join(antd, 'lib/style/color/colors.less');
   let colors = fs.readFileSync(colorFile).toString();
   colors = colors.split('\n')
@@ -100,7 +108,6 @@ function generateColorMappings() {
 
       return prev;
     }, { 'cTn': {}, 'nTc': {} });
-  const defaultLessColors = fs.readFileSync(defaultLess).toString();
   content = defaultLessColors;
   const mappings = content.split('\n')
     .filter(line => line.startsWith('@') && line.indexOf(':') > -1
@@ -149,10 +156,8 @@ function replacePrimaryColors() {
   css = `${scripts}\n@primary-color: ${mappings['nTc']['@primary-color']};\n${css}`;
   return render(css).then(({ css }) => {
     css = css.replace(/(\/.*\/)/g, '');
-    console.log(css);
     const regex = /.(?=\S*['-])([.a-zA-Z0-9'-]+)\ {\n\ \ color:\ (.*);/g;
     const vars = getMatches(css, regex);
-    console.log(vars);
     const classes = Object.keys(vars);
     classes.forEach((cls, index) => {
       if (cls.match(/primary-\d\d?/)) {
@@ -167,7 +172,7 @@ function replacePrimaryColors() {
              '#e6f7ff': 'color(~`colorPalette("@{primary-color}", 1)`)' // some color code
            }
         */
-        console.log(vars[cls], colorName);
+        // console.log(vars[cls], colorName);
         delete mappings['cTn'][cls];
         mappings['cTn'][vars[cls]] = colorName;
       } else {
@@ -194,11 +199,16 @@ function getMatches(string, regex) {
 
 function render(content) {
   return less.render.call(less, content, {
-    paths: [path.join(antd, 'lib/styles'), path.join(antd, 'lib/style')],
+    paths: [
+      path.join(antd, 'lib/styles'),
+      path.join(antd, 'lib/style'),
+      path.join(antd, 'lib/style/themes'),
+      path.join(__dirname, 'src/styles')
+    ],
     javascriptEnabled: true
   }).catch(error => {
     console.log('Error', error);
-    return { mappings, variables };
+    return { css: '' };
   });
 }
 
