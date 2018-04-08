@@ -2,7 +2,8 @@
 This project is a guide to achieve live/dynamic theming related to colors.
 
 ## Demo
-![Theme](public/theme.png)
+![Theme](https://github.com/mzohaibqc/antd-live-theme/blob/master/public/theme.PNG)
+
 https://mzohaibqc.github.io/antd-live-theme/
 
 
