@@ -7,7 +7,7 @@ import {
 import moment from 'moment';
 import ThemeProvider from './ThemeProvider';
 import VarColorPicker from './VarColorPicker';
-
+import ColorInput from './ColorInput';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -64,6 +64,7 @@ class MyForm extends Component {
         >
           <Card title="Theme" style={{ width: 300 }}>
             <Row>
+              <ColorInput />
               <Col xs={16}>Primary Color</Col>
               <Col xs={8}>{colorPickers['@primary-color']}</Col>
               <Col xs={16}>Text Color</Col>
@@ -86,7 +87,7 @@ class MyForm extends Component {
               { required: true, message: 'Please select your favourite colors!', type: 'array' },
             ],
           })(
-            <Select mode="multiple" placeholder="Please select favourite colors" value={['red']}>
+            <Select mode="multiple" placeholder="Please select favourite colors" >
               <Option value="red">Red</Option>
               <Option value="green">Green</Option>
               <Option value="blue">Blue</Option>
