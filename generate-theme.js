@@ -6,6 +6,7 @@ const glob = require('glob');
 const postcss = require('postcss');
 const less = require('less');
 
+let themeCompiledVars = {};
 const antd = path.resolve(__dirname, './node_modules/antd/');
 const defaultLess = path.join(antd, 'lib/style/themes/default.less');
 const defaultLessColors = fs.readFileSync(defaultLess).toString();
@@ -85,15 +86,13 @@ render(content)
   .then(({ css }) => {
     replacePrimaryColors().then(mappings => {
       const colorToNames = mappings.cTn;
-      Object.keys(colorToNames).forEach(color => {
-        const varName = colorToNames[color];
-        console.log(varName, color, color.length);
-        if (varName in themeVars || varName.includes('primary')) {
+      Object.keys(themeCompiledVars).forEach(varName => {
+        let color = themeCompiledVars[varName];
+        console.log(varName, color, color.length, (css.match(new RegExp(`${color}`, 'g')) || []).length);
+        // if (varName in themeVars || varName.includes('primary')) {
+        if (isValidColor(color)) {
           color = color.replace('(', '\\(').replace(')', '\\)');
-          if (isValidColor(color)) {
-            console.log(varName, color, color.length);
-            css = css.replace(new RegExp(`${color}`, 'g'), `${varName}`);
-          }
+          css = css.replace(new RegExp(`${color}`, 'g'), `${varName}`);
         }
       });
 
@@ -161,7 +160,6 @@ function replacePrimaryColors() {
   const varNames = Object.keys(themeVars);
   varNames.forEach(varName => {
     const color = mappings.nTc[varName] || themeVars[varName];
-    console.log(varName, color);
     if (
       isValidColor(color) ||
       color.includes('@{primary-color}') ||
@@ -187,17 +185,16 @@ function replacePrimaryColors() {
   });
   css = `${scripts}\n@primary-color: ${
     mappings.nTc['@primary-color']
-  };\n${css}`;
+    };\n${css}`;
   return render(css)
     .then(({ css }) => {
-      console.log(css);
       css = css.replace(/(\/.*\/)/g, '');
       const regex = /.(?=\S*['-])([.a-zA-Z0-9'-]+)\ {\n\ \ color:\ (.*);/g;
-      const vars = getMatches(css, regex);
-      const classes = Object.keys(vars);
+      themeCompiledVars = getMatches(css, regex);
+      console.log('vars', themeCompiledVars);
+      const classes = Object.keys(themeCompiledVars);
       classes.forEach(cls => {
         if (cls.match(/primary-\d\d?/)) {
-          const colorName = mappings.cTn[cls];
           /* here colorName will be like 'color(~`colorPalette("@{primary-color}", 1)`)'
            So we will delete colorToNames 'cTn' mappings entry for
            {
@@ -208,10 +205,9 @@ function replacePrimaryColors() {
              '#e6f7ff': 'color(~`colorPalette("@{primary-color}", 1)`)' // some color code
            }
         */
-          delete mappings.cTn[cls];
-          mappings.cTn[vars[cls]] = colorName;
-        } else {
-          mappings.cTn[vars[cls]] = cls;
+          const color = themeCompiledVars[cls];
+          delete themeCompiledVars[cls];
+          themeCompiledVars[getPrimaryShade(cls)] = color;
         }
       });
       return mappings;
@@ -256,7 +252,10 @@ function getLessVars(filtPath) {
   });
   return lessVars;
 }
-
+function getPrimaryShade(varName) {
+  const number = varName.split('-')[1];
+  return 'color(~`colorPalette("@{primary-color}", ' + number + ')`)';
+}
 function isValidColor(color) {
   if (color.charAt(0) === '#') {
     color = color.substring(1);

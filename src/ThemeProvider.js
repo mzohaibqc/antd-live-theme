@@ -23,6 +23,7 @@ class ThemeProvider extends React.Component {
   handleColorChange = (varname, color) => {
     const vars = this.state.vars;
     if (varname) vars[varname] = color;
+    console.log(vars);
     window.less.modifyVars(vars).then(() => {
       // message.success(`Theme updated successfully`);
       this.setState({ vars });

@@ -19,6 +19,7 @@ class MyForm extends Component {
   state = {
     vars: {
       '@primary-color': '#00375B',
+      '@secondary-color': '#0000ff',
       '@text-color': '#4D4D4D',
       '@text-color-secondary': '#eb2f96',
       '@heading-color': '#fa8c16'
@@ -57,6 +58,10 @@ class MyForm extends Component {
     }, {});
     return (
       <Form onSubmit={this.handleSubmit}>
+        <Col xs={{ span: 18, offset: 6 }}>
+          (Color based on your own custom variables)
+          <h3 className="secondary">Secondary Color</h3>
+        </Col>
         <ThemeProvider vars={this.state.vars} ref={node => this.themeProvider = node} />
         <FormItem
           {...formItemLayout}
@@ -73,6 +78,8 @@ class MyForm extends Component {
               <Col xs={8}>{colorPickers['@text-color-secondary']}</Col>
               <Col xs={16}>Headings Color</Col>
               <Col xs={8}>{colorPickers['@heading-color']}</Col>
+              <Col xs={16}>Custom Color Variable</Col>
+              <Col xs={8}>{colorPickers['@secondary-color']}</Col>
               <Col xs={24}><Button type="primary" onClick={() => this.themeProvider.handleColorChange()}>Change Theme</Button></Col>
             </Row>
           </Card>
