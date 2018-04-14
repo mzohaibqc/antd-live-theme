@@ -3,8 +3,8 @@ import {
   Row, Col, Icon,
   Breadcrumb, Menu, Layout
 } from 'antd';
+import 'rc-color-picker/assets/index.css';
 
-import ThemeProvider from './ThemeProvider';
 import Form from './Form';
 
 const { SubMenu } = Menu;
@@ -14,11 +14,6 @@ class App extends Component {
   state = { primary: '#00375B', secondary: '#4D4D4D' }
 
   render() {
-    const vars = {
-      '@primary-color': '#00375B',
-      '@text-color': '#4D4D4D',
-      '@text-color-secondary': '#4D4D4D'
-    }
     return (
       <div className="App">
         <Row>
@@ -78,9 +73,6 @@ class App extends Component {
                 </Breadcrumb>
                 <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
                   <Row>
-                    <Col xs={24} >
-                      <ThemeProvider vars={vars} />
-                    </Col>
                     <Col xs={24} >
                       <Form />
                     </Col>

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import {
-  Form, Select, Switch, Radio, Card,
+  Form, Select, Switch, Radio, Card, message,
   Button, Upload, Icon, DatePicker, Row, Col
 } from 'antd';
 
 import moment from 'moment';
-import ThemeProvider from './ThemeProvider';
 import VarColorPicker from './VarColorPicker';
 import ColorInput from './ColorInput';
 
@@ -20,11 +19,31 @@ class MyForm extends Component {
     vars: {
       '@primary-color': '#00375B',
       '@secondary-color': '#0000ff',
-      '@text-color': '#4D4D4D',
+      '@text-color': '#000000',
       '@text-color-secondary': '#eb2f96',
       '@heading-color': '#fa8c16'
     }
   }
+
+  // componentDidMount = () => {
+  //   let vars = {
+  //     '@primary-color': '#00375B',
+  //     '@secondary-color': '#0000ff',
+  //     '@text-color': '#4D4D4D',
+  //     '@text-color-secondary': '#eb2f96',
+  //     '@heading-color': '#fa8c16'
+  //   };
+  //   try {
+  //     vars = JSON.parse(localStorage.getItem('app-theme'));
+  //   } finally {
+  //     window.less.modifyVars(vars).then(() => {
+  //       this.setState({ vars });
+  //     }).catch(error => {
+  //       this.setState({ vars });
+  //       message.error(`Failed to update theme`);
+  //     });
+  //   }
+  // }
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -44,7 +63,18 @@ class MyForm extends Component {
     const { vars } = this.state;
     vars[varName] = color;
     this.setState({ vars });
-    // this.themeProvider.handleColorChange();
+  }
+  handleColorChange = (varname, color) => {
+    const { vars } = this.state;
+    if (varname) vars[varname] = color;
+    console.log(vars);
+    window.less.modifyVars(vars).then(() => {
+      // message.success(`Theme updated successfully`);
+      this.setState({ vars });
+      localStorage.setItem('app-theme', JSON.stringify(vars));
+    }).catch(error => {
+      message.error(`Failed to update theme`);
+    });
   }
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -62,7 +92,6 @@ class MyForm extends Component {
           (Color based on your own custom variables)
           <h3 className="secondary">Secondary Color</h3>
         </Col>
-        <ThemeProvider vars={this.state.vars} ref={node => this.themeProvider = node} />
         <FormItem
           {...formItemLayout}
           label="Colors"
@@ -80,7 +109,7 @@ class MyForm extends Component {
               <Col xs={8}>{colorPickers['@heading-color']}</Col>
               <Col xs={16}>Custom Color Variable</Col>
               <Col xs={8}>{colorPickers['@secondary-color']}</Col>
-              <Col xs={24}><Button type="primary" onClick={() => this.themeProvider.handleColorChange()}>Change Theme</Button></Col>
+              <Col xs={24}><Button type="primary" onClick={() => this.handleColorChange()}>Change Theme</Button></Col>
             </Row>
           </Card>
         </FormItem>

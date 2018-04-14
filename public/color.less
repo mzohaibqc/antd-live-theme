@@ -1,8 +1,7 @@
-@primary-color: #00375B;
-@text-color: #cccccc;
-@text-color-secondary: #eb2f96;
-@heading-color: #fa8c16;
-@secondary-color: #0000ff;
+// This file will contain all varibales, our custom varibales and
+//those from Ant Design which we want to override.
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
 .bezierEasingMixin() {
 @functions: ~`(function() {
@@ -1299,10 +1298,6 @@ this.tinycolor = tinycolor;
 // https://github.com/ant-design/ant-motion/issues/44
 .tinyColorMixin();
 
-/* stylelint-disable no-duplicate-selectors */
-
-
-
 // We create a very complex algorithm which take the place of original tint/shade color system
 // to make sure no one can understand it 👻
 // and create an entire color palette magicly by inputing just a single primary color.
@@ -1375,6 +1370,618 @@ this.tinycolor = tinycolor;
 // https://github.com/ant-design/ant-motion/issues/44
 .colorPaletteMixin();
 
+// color palettes
+@blue-1: color(~`colorPalette("@{blue-6}", 1)`);
+@blue-2: color(~`colorPalette("@{blue-6}", 2)`);
+@blue-3: color(~`colorPalette("@{blue-6}", 3)`);
+@blue-4: color(~`colorPalette("@{blue-6}", 4)`);
+@blue-5: color(~`colorPalette("@{blue-6}", 5)`);
+@blue-6: #1890ff;
+@blue-7: color(~`colorPalette("@{blue-6}", 7)`);
+@blue-8: color(~`colorPalette("@{blue-6}", 8)`);
+@blue-9: color(~`colorPalette("@{blue-6}", 9)`);
+@blue-10: color(~`colorPalette("@{blue-6}", 10)`);
+
+@purple-1: color(~`colorPalette("@{purple-6}", 1)`);
+@purple-2: color(~`colorPalette("@{purple-6}", 2)`);
+@purple-3: color(~`colorPalette("@{purple-6}", 3)`);
+@purple-4: color(~`colorPalette("@{purple-6}", 4)`);
+@purple-5: color(~`colorPalette("@{purple-6}", 5)`);
+@purple-6: #722ed1;
+@purple-7: color(~`colorPalette("@{purple-6}", 7)`);
+@purple-8: color(~`colorPalette("@{purple-6}", 8)`);
+@purple-9: color(~`colorPalette("@{purple-6}", 9)`);
+@purple-10: color(~`colorPalette("@{purple-6}", 10)`);
+
+@cyan-1: color(~`colorPalette("@{cyan-6}", 1)`);
+@cyan-2: color(~`colorPalette("@{cyan-6}", 2)`);
+@cyan-3: color(~`colorPalette("@{cyan-6}", 3)`);
+@cyan-4: color(~`colorPalette("@{cyan-6}", 4)`);
+@cyan-5: color(~`colorPalette("@{cyan-6}", 5)`);
+@cyan-6: #13c2c2;
+@cyan-7: color(~`colorPalette("@{cyan-6}", 7)`);
+@cyan-8: color(~`colorPalette("@{cyan-6}", 8)`);
+@cyan-9: color(~`colorPalette("@{cyan-6}", 9)`);
+@cyan-10: color(~`colorPalette("@{cyan-6}", 10)`);
+
+@green-1: color(~`colorPalette("@{green-6}", 1)`);
+@green-2: color(~`colorPalette("@{green-6}", 2)`);
+@green-3: color(~`colorPalette("@{green-6}", 3)`);
+@green-4: color(~`colorPalette("@{green-6}", 4)`);
+@green-5: color(~`colorPalette("@{green-6}", 5)`);
+@green-6: #52c41a;
+@green-7: color(~`colorPalette("@{green-6}", 7)`);
+@green-8: color(~`colorPalette("@{green-6}", 8)`);
+@green-9: color(~`colorPalette("@{green-6}", 9)`);
+@green-10: color(~`colorPalette("@{green-6}", 10)`);
+
+@magenta-1: color(~`colorPalette("@{magenta-6}", 1)`);
+@magenta-2: color(~`colorPalette("@{magenta-6}", 2)`);
+@magenta-3: color(~`colorPalette("@{magenta-6}", 3)`);
+@magenta-4: color(~`colorPalette("@{magenta-6}", 4)`);
+@magenta-5: color(~`colorPalette("@{magenta-6}", 5)`);
+@magenta-6: #eb2f96;
+@magenta-7: color(~`colorPalette("@{magenta-6}", 7)`);
+@magenta-8: color(~`colorPalette("@{magenta-6}", 8)`);
+@magenta-9: color(~`colorPalette("@{magenta-6}", 9)`);
+@magenta-10: color(~`colorPalette("@{magenta-6}", 10)`);
+
+// alias of magenta
+@pink-1: color(~`colorPalette("@{pink-6}", 1)`);
+@pink-2: color(~`colorPalette("@{pink-6}", 2)`);
+@pink-3: color(~`colorPalette("@{pink-6}", 3)`);
+@pink-4: color(~`colorPalette("@{pink-6}", 4)`);
+@pink-5: color(~`colorPalette("@{pink-6}", 5)`);
+@pink-6: #eb2f96;
+@pink-7: color(~`colorPalette("@{pink-6}", 7)`);
+@pink-8: color(~`colorPalette("@{pink-6}", 8)`);
+@pink-9: color(~`colorPalette("@{pink-6}", 9)`);
+@pink-10: color(~`colorPalette("@{pink-6}", 10)`);
+
+@red-1: color(~`colorPalette("@{red-6}", 1)`);
+@red-2: color(~`colorPalette("@{red-6}", 2)`);
+@red-3: color(~`colorPalette("@{red-6}", 3)`);
+@red-4: color(~`colorPalette("@{red-6}", 4)`);
+@red-5: color(~`colorPalette("@{red-6}", 5)`);
+@red-6: #f5222d;
+@red-7: color(~`colorPalette("@{red-6}", 7)`);
+@red-8: color(~`colorPalette("@{red-6}", 8)`);
+@red-9: color(~`colorPalette("@{red-6}", 9)`);
+@red-10: color(~`colorPalette("@{red-6}", 10)`);
+
+@orange-1: color(~`colorPalette("@{orange-6}", 1)`);
+@orange-2: color(~`colorPalette("@{orange-6}", 2)`);
+@orange-3: color(~`colorPalette("@{orange-6}", 3)`);
+@orange-4: color(~`colorPalette("@{orange-6}", 4)`);
+@orange-5: color(~`colorPalette("@{orange-6}", 5)`);
+@orange-6: #fa8c16;
+@orange-7: color(~`colorPalette("@{orange-6}", 7)`);
+@orange-8: color(~`colorPalette("@{orange-6}", 8)`);
+@orange-9: color(~`colorPalette("@{orange-6}", 9)`);
+@orange-10: color(~`colorPalette("@{orange-6}", 10)`);
+
+@yellow-1: color(~`colorPalette("@{yellow-6}", 1)`);
+@yellow-2: color(~`colorPalette("@{yellow-6}", 2)`);
+@yellow-3: color(~`colorPalette("@{yellow-6}", 3)`);
+@yellow-4: color(~`colorPalette("@{yellow-6}", 4)`);
+@yellow-5: color(~`colorPalette("@{yellow-6}", 5)`);
+@yellow-6: #fadb14;
+@yellow-7: color(~`colorPalette("@{yellow-6}", 7)`);
+@yellow-8: color(~`colorPalette("@{yellow-6}", 8)`);
+@yellow-9: color(~`colorPalette("@{yellow-6}", 9)`);
+@yellow-10: color(~`colorPalette("@{yellow-6}", 10)`);
+
+@volcano-1: color(~`colorPalette("@{volcano-6}", 1)`);
+@volcano-2: color(~`colorPalette("@{volcano-6}", 2)`);
+@volcano-3: color(~`colorPalette("@{volcano-6}", 3)`);
+@volcano-4: color(~`colorPalette("@{volcano-6}", 4)`);
+@volcano-5: color(~`colorPalette("@{volcano-6}", 5)`);
+@volcano-6: #fa541c;
+@volcano-7: color(~`colorPalette("@{volcano-6}", 7)`);
+@volcano-8: color(~`colorPalette("@{volcano-6}", 8)`);
+@volcano-9: color(~`colorPalette("@{volcano-6}", 9)`);
+@volcano-10: color(~`colorPalette("@{volcano-6}", 10)`);
+
+@geekblue-1: color(~`colorPalette("@{geekblue-6}", 1)`);
+@geekblue-2: color(~`colorPalette("@{geekblue-6}", 2)`);
+@geekblue-3: color(~`colorPalette("@{geekblue-6}", 3)`);
+@geekblue-4: color(~`colorPalette("@{geekblue-6}", 4)`);
+@geekblue-5: color(~`colorPalette("@{geekblue-6}", 5)`);
+@geekblue-6: #2f54eb;
+@geekblue-7: color(~`colorPalette("@{geekblue-6}", 7)`);
+@geekblue-8: color(~`colorPalette("@{geekblue-6}", 8)`);
+@geekblue-9: color(~`colorPalette("@{geekblue-6}", 9)`);
+@geekblue-10: color(~`colorPalette("@{geekblue-6}", 10)`);
+
+@lime-1: color(~`colorPalette("@{lime-6}", 1)`);
+@lime-2: color(~`colorPalette("@{lime-6}", 2)`);
+@lime-3: color(~`colorPalette("@{lime-6}", 3)`);
+@lime-4: color(~`colorPalette("@{lime-6}", 4)`);
+@lime-5: color(~`colorPalette("@{lime-6}", 5)`);
+@lime-6: #a0d911;
+@lime-7: color(~`colorPalette("@{lime-6}", 7)`);
+@lime-8: color(~`colorPalette("@{lime-6}", 8)`);
+@lime-9: color(~`colorPalette("@{lime-6}", 9)`);
+@lime-10: color(~`colorPalette("@{lime-6}", 10)`);
+
+@gold-1: color(~`colorPalette("@{gold-6}", 1)`);
+@gold-2: color(~`colorPalette("@{gold-6}", 2)`);
+@gold-3: color(~`colorPalette("@{gold-6}", 3)`);
+@gold-4: color(~`colorPalette("@{gold-6}", 4)`);
+@gold-5: color(~`colorPalette("@{gold-6}", 5)`);
+@gold-6: #faad14;
+@gold-7: color(~`colorPalette("@{gold-6}", 7)`);
+@gold-8: color(~`colorPalette("@{gold-6}", 8)`);
+@gold-9: color(~`colorPalette("@{gold-6}", 9)`);
+@gold-10: color(~`colorPalette("@{gold-6}", 10)`);
+
+// The prefix to use on all css classes from ant.
+@ant-prefix             : ant;
+
+// -------- Colors -----------
+@primary-color          : @blue-6;
+@info-color             : @blue-6;
+@success-color          : @green-6;
+@processing-color       : @primary-color;
+@error-color            : @red-6;
+@highlight-color        : @red-6;
+@warning-color          : @gold-6;
+@normal-color           : #d9d9d9;
+
+// Color used by default to control hover and active backgrounds and for
+// alert info backgrounds.
+@primary-1: color(~`colorPalette("@{primary-color}", 1)`);  // replace tint(@primary-color, 90%)
+@primary-2: color(~`colorPalette("@{primary-color}", 2)`);  // replace tint(@primary-color, 80%)
+@primary-3: color(~`colorPalette("@{primary-color}", 3)`);  // unused
+@primary-4: color(~`colorPalette("@{primary-color}", 4)`);  // unused
+@primary-5: color(~`colorPalette("@{primary-color}", 5)`);  // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
+@primary-6: @primary-color;                                 // color used to control the text color of active buttons, don't use, use @primary-color
+@primary-7: color(~`colorPalette("@{primary-color}", 7)`);  // replace shade(@primary-color, 5%)
+@primary-8: color(~`colorPalette("@{primary-color}", 8)`);  // unused
+@primary-9: color(~`colorPalette("@{primary-color}", 9)`);  // unused
+@primary-10: color(~`colorPalette("@{primary-color}", 10)`);  // unused
+
+// Base Scaffolding Variables
+// ---
+
+// Background color for `<body>`
+@body-background        : #fff;
+// Base background color for most components
+@component-background   : #fff;
+@font-family-no-number  : "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family            : "Monospaced Number", @font-family-no-number;
+@code-family            : Consolas, Menlo, Courier, monospace;
+@heading-color          : fade(#000, 85%);
+@text-color             : fade(#000, 65%);
+@text-color-secondary   : fade(#000, 45%);
+@heading-color-dark     : fade(#fff, 100%);
+@text-color-dark        : fade(#fff,85%);
+@text-color-secondary-dark: fade(#fff, 65%);
+@font-size-base         : 14px;
+@font-size-lg           : @font-size-base + 2px;
+@font-size-sm           : 12px;
+@line-height-base       : 1.5;
+@border-radius-base     : 4px;
+@border-radius-sm       : 2px;
+
+// vertical paddings
+@padding-lg    : 24px; // containers
+@padding-md    : 16px; // small containers and buttons
+@padding-sm    : 12px; // Form controls and items
+@padding-xs    : 8px;  // small items
+
+// vertical padding for all form controls
+@control-padding-horizontal: @padding-sm;
+@control-padding-horizontal-sm: @padding-xs;
+
+// The background colors for active and hover states for things like
+// list items or table cells.
+@item-active-bg         : @primary-1;
+@item-hover-bg          : @primary-1;
+
+// ICONFONT
+@iconfont-css-prefix    : anticon;
+@icon-url               : "https://at.alicdn.com/t/font_148784_v4ggb6wrjmkotj4i";
+
+// LINK
+@link-color             : @primary-color;
+@link-hover-color       : color(~`colorPalette("@{link-color}", 5)`);
+@link-active-color      : color(~`colorPalette("@{link-color}", 7)`);
+@link-decoration        : none;
+@link-hover-decoration  : none;
+
+// Animation
+@ease-out            : cubic-bezier(0.215, 0.61, 0.355, 1);
+@ease-in             : cubic-bezier(0.55, 0.055, 0.675, 0.19);
+@ease-in-out         : cubic-bezier(0.645, 0.045, 0.355, 1);
+@ease-out-back       : cubic-bezier(0.12, 0.4, 0.29, 1.46);
+@ease-in-back        : cubic-bezier(0.71, -0.46, 0.88, 0.6);
+@ease-in-out-back    : cubic-bezier(0.71, -0.46, 0.29, 1.46);
+@ease-out-circ       : cubic-bezier(0.08, 0.82, 0.17, 1);
+@ease-in-circ        : cubic-bezier(0.6, 0.04, 0.98, 0.34);
+@ease-in-out-circ    : cubic-bezier(0.78, 0.14, 0.15, 0.86);
+@ease-out-quint      : cubic-bezier(0.23, 1, 0.32, 1);
+@ease-in-quint       : cubic-bezier(0.755, 0.05, 0.855, 0.06);
+@ease-in-out-quint   : cubic-bezier(0.86, 0, 0.07, 1);
+
+// Border color
+@border-color-base      : hsv(0, 0, 85%);  // base border outline a component
+@border-color-split     : hsv(0, 0, 91%);  // split border inside a component
+@border-width-base      : 1px;            // width of the border for a component
+@border-style-base      : solid;          // style of a components border
+
+// Outline
+@outline-blur-size      : 0;
+@outline-width          : 2px;
+@outline-color          : @primary-color;
+
+@background-color-light : hsv(0, 0, 98%);  // background of header and selected item
+@background-color-base  : hsv(0, 0, 96%);  // Default grey background color
+
+// Disabled states
+@disabled-color         : fade(#000, 25%);
+@disabled-bg            : @background-color-base;
+@disabled-color-dark    : fade(#fff, 35%);
+
+// Shadow
+@shadow-color           : rgba(0, 0, 0, .15);
+@box-shadow-base        : @shadow-1-down;
+@shadow-1-up            : 0 2px 8px @shadow-color;
+@shadow-1-down          : 0 2px 8px @shadow-color;
+@shadow-1-left          : -2px 0 8px @shadow-color;
+@shadow-1-right         : 2px 0 8px @shadow-color;
+@shadow-2               : 0 4px 12px @shadow-color;
+
+// Buttons
+@btn-font-weight        : 400;
+@btn-border-radius-base : @border-radius-base;
+@btn-border-radius-sm   : @border-radius-base;
+
+@btn-primary-color      : #fff;
+@btn-primary-bg         : @primary-color;
+
+@btn-default-color      : @text-color;
+@btn-default-bg         : #fff;
+@btn-default-border     : @border-color-base;
+
+@btn-danger-color       : @error-color;
+@btn-danger-bg          : @background-color-base;
+@btn-danger-border      : @border-color-base;
+
+@btn-disable-color      : @disabled-color;
+@btn-disable-bg         : @disabled-bg;
+@btn-disable-border     : @border-color-base;
+
+@btn-padding-base       : 0 @padding-md - 1px;
+@btn-font-size-lg       : @font-size-lg;
+@btn-font-size-sm       : @font-size-base;
+@btn-padding-lg         : @btn-padding-base;
+@btn-padding-sm         : 0 @padding-xs - 1px;
+
+@btn-height-base        : 32px;
+@btn-height-lg          : 40px;
+@btn-height-sm          : 24px;
+
+@btn-circle-size        : @btn-height-base;
+@btn-circle-size-lg     : @btn-height-lg;
+@btn-circle-size-sm     : @btn-height-sm;
+
+@btn-group-border       : @primary-5;
+
+// Checkbox
+@checkbox-size          : 16px;
+@checkbox-color         : @primary-color;
+
+// Radio
+@radio-size             : 16px;
+@radio-dot-color        : @primary-color;
+
+// Radio buttons
+@radio-button-bg           : @btn-default-bg;
+@radio-button-color        : @btn-default-color;
+@radio-button-hover-color  : @primary-5;
+@radio-button-active-color : @primary-7;
+
+// Media queries breakpoints
+// Extra small screen / phone
+@screen-xs              : 480px;
+@screen-xs-min          : @screen-xs;
+
+// Small screen / tablet
+@screen-sm              : 576px;
+@screen-sm-min          : @screen-sm;
+
+// Medium screen / desktop
+@screen-md              : 768px;
+@screen-md-min          : @screen-md;
+
+// Large screen / wide desktop
+@screen-lg              : 992px;
+@screen-lg-min          : @screen-lg;
+
+// Extra large screen / full hd
+@screen-xl              : 1200px;
+@screen-xl-min          : @screen-xl;
+
+// Extra extra large screen / large descktop
+@screen-xxl              : 1600px;
+@screen-xxl-min          : @screen-xxl;
+
+// provide a maximum
+@screen-xs-max          : (@screen-sm-min - 1px);
+@screen-sm-max          : (@screen-md-min - 1px);
+@screen-md-max          : (@screen-lg-min - 1px);
+@screen-lg-max          : (@screen-xl-min - 1px);
+@screen-xl-max          : (@screen-xxl-min - 1px);
+
+// Grid system
+@grid-columns           : 24;
+@grid-gutter-width      : 0;
+
+// Layout
+@layout-body-background      : #f0f2f5;
+@layout-header-background    : #001529;
+@layout-footer-background    : @layout-body-background;
+@layout-header-height        : 64px;
+@layout-header-padding       : 0 50px;
+@layout-footer-padding       : 24px 50px;
+@layout-sider-background     : @layout-header-background;
+@layout-trigger-height       : 48px;
+@layout-trigger-background   : #002140;
+@layout-trigger-color        : #fff;
+@layout-zero-trigger-width   : 36px;
+@layout-zero-trigger-height  : 42px;
+
+// z-index list
+@zindex-affix           : 10;
+@zindex-back-top        : 10;
+@zindex-modal-mask      : 1000;
+@zindex-modal           : 1000;
+@zindex-notification    : 1010;
+@zindex-message         : 1010;
+@zindex-popover         : 1030;
+@zindex-picker          : 1050;
+@zindex-dropdown        : 1050;
+@zindex-tooltip         : 1060;
+
+// Animation
+@animation-duration-slow: .3s; // Modal
+@animation-duration-base: .2s;
+@animation-duration-fast: .1s; // Tooltip
+
+// Form
+// ---
+@label-required-color        : @highlight-color;
+@label-color                 : @heading-color;
+@form-item-margin-bottom     : 24px;
+@form-item-trailing-colon    : true;
+@form-vertical-label-padding : 0 0 8px;
+@form-vertical-label-margin  : 0;
+
+// Input
+// ---
+@input-height-base           : 32px;
+@input-height-lg             : 40px;
+@input-height-sm             : 24px;
+@input-padding-horizontal    : @control-padding-horizontal - 1px;
+@input-padding-horizontal-base: @input-padding-horizontal;
+@input-padding-horizontal-sm : @control-padding-horizontal-sm - 1px;
+@input-padding-horizontal-lg : @input-padding-horizontal;
+@input-padding-vertical-base : 4px;
+@input-padding-vertical-sm   : 1px;
+@input-padding-vertical-lg   : 6px;
+@input-placeholder-color     : hsv(0, 0, 75%);
+@input-color                 : @text-color;
+@input-border-color          : @border-color-base;
+@input-bg                    : #fff;
+@input-addon-bg              : @background-color-light;
+@input-hover-border-color    : @primary-color;
+@input-disabled-bg           : @disabled-bg;
+
+// Tooltip
+// ---
+//* Tooltip max width
+@tooltip-max-width: 250px;
+//** Tooltip text color
+@tooltip-color: #fff;
+//** Tooltip background color
+@tooltip-bg: rgba(0, 0, 0, .75);
+//** Tooltip arrow width
+@tooltip-arrow-width: 5px;
+//** Tooltip distance with trigger
+@tooltip-distance: @tooltip-arrow-width - 1px + 4px;
+//** Tooltip arrow color
+@tooltip-arrow-color: @tooltip-bg;
+
+// Popover
+// ---
+//** Popover body background color
+@popover-bg: #fff;
+//** Popover text color
+@popover-color: @text-color;
+//** Popover maximum width
+@popover-min-width: 177px;
+//** Popover arrow width
+@popover-arrow-width: 5px;
+//** Popover arrow color
+@popover-arrow-color: @popover-bg;
+//** Popover outer arrow width
+//** Popover outer arrow color
+@popover-arrow-outer-color: @popover-bg;
+//** Popover distance with trigger
+@popover-distance: @popover-arrow-width + 4px;
+
+// Modal
+// --
+@modal-mask-bg: rgba(0, 0, 0, 0.65);
+
+// Progress
+// --
+@progress-default-color: @processing-color;
+@progress-remaining-color: @background-color-base;
+
+// Menu
+// ---
+@menu-inline-toplevel-item-height: 40px;
+@menu-item-height: 40px;
+@menu-collapsed-width: 80px;
+@menu-bg: @component-background;
+@menu-item-color: @text-color;
+@menu-highlight-color: @primary-color;
+@menu-item-active-bg: @item-active-bg;
+@menu-item-group-title-color: @text-color-secondary;
+// dark theme
+@menu-dark-color: @text-color-secondary-dark;
+@menu-dark-bg: @layout-header-background;
+@menu-dark-arrow-color: #fff;
+@menu-dark-submenu-bg: #000c17;
+@menu-dark-highlight-color: #fff;
+@menu-dark-item-selected-bg: @primary-color;
+
+// Spin
+// ---
+@spin-dot-size-sm: 14px;
+@spin-dot-size: 20px;
+@spin-dot-size-lg: 32px;
+
+// Table
+// --
+@table-header-bg: @background-color-light;
+@table-header-sort-bg: @background-color-base;
+@table-row-hover-bg: @primary-1;
+@table-selected-row-bg: #fafafa;
+@table-expanded-row-bg: #fbfbfb;
+@table-padding-vertical: 16px;
+@table-padding-horizontal: 16px;
+
+// Tag
+// --
+@tag-default-bg: @background-color-light;
+@tag-default-color: @text-color;
+@tag-font-size: @font-size-sm;
+
+// TimePicker
+// ---
+@time-picker-panel-column-width: 56px;
+@time-picker-panel-width: @time-picker-panel-column-width * 3;
+@time-picker-selected-bg: @background-color-base;
+
+// Carousel
+// ---
+@carousel-dot-width: 16px;
+@carousel-dot-height: 3px;
+@carousel-dot-active-width: 24px;
+
+// Badge
+// ---
+@badge-height: 20px;
+@badge-dot-size: 6px;
+@badge-font-size: @font-size-sm;
+@badge-font-weight: normal;
+@badge-status-size: 6px;
+
+// Rate
+// ---
+@rate-star-color: @yellow-6;
+@rate-star-bg: @border-color-split;
+
+// Card
+// ---
+@card-head-color: @heading-color;
+@card-head-background: @component-background;
+@card-head-padding: 16px;
+@card-inner-head-padding: 12px;
+@card-padding-base: 24px;
+@card-padding-wider: 32px;
+@card-actions-background: @background-color-light;
+@card-shadow: 0 2px 8px rgba(0, 0, 0, .09);
+
+// Tabs
+// ---
+@tabs-card-head-background: @background-color-light;
+@tabs-card-height: 40px;
+@tabs-card-active-color: @primary-color;
+@tabs-title-font-size: @font-size-base;
+@tabs-title-font-size-lg: @font-size-lg;
+@tabs-title-font-size-sm: @font-size-base;
+@tabs-ink-bar-bg-color: @primary-color;
+@tab-bar-margin: 0 0 16px 0;
+@tab-horizontal-margin: 0 32px 0 0;
+@tab-vertical-margin: 0 0 16px 0;
+@tab-horizontal-padding: 12px 16px;
+@tab-vertical-padding: 8px 24px;
+@tab-scrolling-size: 32px;
+@tab-highlight-color: @primary-color;
+@tab-hover-color: @primary-5;
+@tab-active-color: @primary-7;
+
+// BackTop
+// ---
+@back-top-color: #fff;
+@back-top-bg: @text-color-secondary;
+@back-top-hover-bg: @text-color;
+
+// Avatar
+// ---
+@avatar-size-base: 32px;
+@avatar-size-lg: 40px;
+@avatar-size-sm: 24px;
+@avatar-font-size-base: 18px;
+@avatar-font-size-lg: 24px;
+@avatar-font-size-sm: 14px;
+@avatar-bg: #ccc;
+@avatar-color: #fff;
+@avatar-border-radius: @border-radius-base;
+
+// Switch
+// ---
+@switch-height: 22px;
+@switch-sm-height: 16px;
+@switch-sm-checked-margin-left: -(@switch-sm-height - 3px);
+@switch-disabled-opacity: 0.4;
+@switch-color: @primary-color;
+
+// Pagination
+// ---
+@pagination-item-size: 32px;
+@pagination-item-size-sm: 24px;
+@pagination-font-family: Arial;
+@pagination-font-weight-active: 500;
+
+// Breadcrumb
+// ---
+@breadcrumb-base-color:        @text-color-secondary;
+@breadcrumb-last-item-color:   @text-color;
+@breadcrumb-font-size:         @font-size-base;
+@breadcrumb-icon-font-size:    @font-size-sm;
+@breadcrumb-link-color:        @text-color-secondary;
+@breadcrumb-link-color-hover:  @primary-5;
+@breadcrumb-separator-color:   @text-color-secondary;
+@breadcrumb-separator-margin:  0 @padding-xs;
+
+// Slider
+// ---
+@slider-margin:                       14px 6px 10px;
+@slider-rail-background-color:        @background-color-base;
+@slider-rail-background-color-hover:  #e1e1e1;
+@slider-track-background-color:       @primary-3;
+@slider-track-background-color-hover: @primary-4;
+@slider-handle-color:                 @primary-3;
+@slider-handle-color-hover:           @primary-4;
+@slider-handle-color-focus:           tint(@primary-color, 20%);
+@slider-handle-color-focus-shadow:    tint(@primary-color, 50%);
+@slider-handle-color-tooltip-open:    @primary-color;
+@slider-dot-border-color:             @border-color-split;
+@slider-dot-border-color-active:      tint(@primary-color, 50%);
+@slider-disabled-color:               @disabled-color;
+@slider-disabled-background-color:    @component-background;
+
+@secondry-color: #dddddd;
+@primary-color: #00375B;
+@text-color: #000000;
+@text-color-secondary: #eb2f96;
+@heading-color: #fa8c16;
+@secondary-color: #0000ff;
 
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -1455,11 +2062,11 @@ mark {
   color: #52c41a;
 }
 .ant-alert-info {
-  border: 1px solid color(~`colorPalette("@{primary-color}", 3)`);
-  background-color: color(~`colorPalette("@{primary-color}", 1)`);
+  border: 1px solid #91d5ff;
+  background-color: #e6f7ff;
 }
 .ant-alert-info .ant-alert-icon {
-  color: @primary-color;
+  color: #1890ff;
 }
 .ant-alert-warning {
   border: 1px solid #ffe58f;
@@ -2478,7 +3085,7 @@ mark {
 }
 .ant-cascader-picker:focus .ant-cascader-input {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-cascader-picker-clear {
   background: #fff;
@@ -2636,7 +3243,7 @@ mark {
 }
 .ant-calendar-picker:focus .ant-calendar-picker-input:not(.ant-input-disabled) {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-calendar-picker-clear {
   color: rgba(0, 0, 0, 0.25);
@@ -2940,7 +3547,7 @@ mark {
 .ant-calendar-range .ant-calendar-input:focus,
 .ant-calendar-range .ant-calendar-time-picker-input:focus {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-calendar-range .ant-calendar-input-disabled,
 .ant-calendar-range .ant-calendar-time-picker-input-disabled {
@@ -3543,7 +4150,7 @@ form .ant-upload {
 }
 .ant-input-number:focus {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-input-number-disabled {
   background-color: #f5f5f5;
@@ -3571,7 +4178,7 @@ form .ant-upload {
 }
 .ant-input-number-focused {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-input-number-disabled {
   background-color: #f5f5f5;
@@ -3638,7 +4245,7 @@ form .ant-upload {
 }
 .ant-input:focus {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-input-disabled {
   background-color: #f5f5f5;
@@ -3861,7 +4468,7 @@ form .ant-upload {
 }
 .ant-mention-wrapper .ant-mention-editor:focus {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-mention-wrapper .ant-mention-editor-disabled {
   background-color: #f5f5f5;
@@ -3872,7 +4479,7 @@ form .ant-upload {
 }
 .ant-mention-wrapper.ant-mention-active:not(.disabled) .ant-mention-editor {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-mention-wrapper.disabled .ant-mention-editor {
   background-color: #f5f5f5;
@@ -4110,7 +4717,7 @@ form .ant-upload {
 }
 .ant-menu-dark .ant-menu-inline.ant-menu-sub {
   background: #000c17;
-  box-shadow: 0 2px 8px @text-color-secondary inset;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45) inset;
 }
 .ant-menu-dark.ant-menu-horizontal {
   border-bottom-color: #001529;
@@ -4230,7 +4837,7 @@ form .ant-upload {
 }
 .ant-message-info .anticon,
 .ant-message-loading .anticon {
-  color: @primary-color;
+  color: #1890ff;
 }
 .ant-modal {
   color: @text-color;
@@ -4266,7 +4873,7 @@ form .ant-upload {
 }
 .ant-modal-mask {
   background-color: #373737;
-  background-color: @text-color;
+  background-color: rgba(0, 0, 0, 0.65);
 }
 .ant-confirm-body .ant-confirm-title {
   color: @heading-color;
@@ -4282,7 +4889,7 @@ form .ant-upload {
   color: #faad14;
 }
 .ant-confirm-info .ant-confirm-body > .anticon {
-  color: @primary-color;
+  color: #1890ff;
 }
 .ant-confirm-success .ant-confirm-body > .anticon {
   color: #52c41a;
@@ -4305,7 +4912,7 @@ form .ant-upload {
   color: #52c41a;
 }
 .ant-notification-notice-icon-info {
-  color: @primary-color;
+  color: #1890ff;
 }
 .ant-notification-notice-icon-warning {
   color: #faad14;
@@ -4420,7 +5027,7 @@ form .ant-upload {
 }
 .ant-pagination-options-quick-jumper input:focus {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-pagination-options-quick-jumper input-disabled {
   background-color: #f5f5f5;
@@ -4697,7 +5304,7 @@ form .ant-upload {
 .ant-select-selection:focus,
 .ant-select-selection:active {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-select-selection__clear {
   background: #fff;
@@ -4751,7 +5358,7 @@ form .ant-upload {
 }
 .ant-select-open .ant-select-selection {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-select-combobox .ant-select-search__field {
   box-shadow: none;
@@ -4822,8 +5429,8 @@ form .ant-upload {
   background-color: #fff;
 }
 .ant-slider-handle:focus {
-  border-color: #46a6ff;
-  box-shadow: 0 0 0 5px #8cc8ff;
+  border-color: #335f7c;
+  box-shadow: 0 0 0 5px #809bad;
 }
 .ant-slider-handle.ant-tooltip-open {
   border-color: @primary-color;
@@ -4852,7 +5459,7 @@ form .ant-upload {
   border-radius: 50%;
 }
 .ant-slider-dot-active {
-  border-color: #8cc8ff;
+  border-color: #809bad;
 }
 .ant-slider-disabled .ant-slider-track {
   background-color: rgba(0, 0, 0, 0.25) !important;
@@ -5052,7 +5659,7 @@ form .ant-upload {
   color: @primary-color;
 }
 .ant-switch:focus {
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-switch:focus:hover {
   box-shadow: none;
@@ -5502,23 +6109,23 @@ tr.ant-table-expanded-row:hover {
   background-color: color(~`colorPalette("@{primary-color}", 7)`);
 }
 .ant-tag-pink {
-  color: #eb2f96;
+  color: @text-color-secondary;
   background: #fff0f6;
   border-color: #ffadd2;
 }
 .ant-tag-pink-inverse {
-  background: #eb2f96;
-  border-color: #eb2f96;
+  background: @text-color-secondary;
+  border-color: @text-color-secondary;
   color: #fff;
 }
 .ant-tag-magenta {
-  color: #eb2f96;
+  color: @text-color-secondary;
   background: #fff0f6;
   border-color: #ffadd2;
 }
 .ant-tag-magenta-inverse {
-  background: #eb2f96;
-  border-color: #eb2f96;
+  background: @text-color-secondary;
+  border-color: @text-color-secondary;
   color: #fff;
 }
 .ant-tag-red {
@@ -5542,13 +6149,13 @@ tr.ant-table-expanded-row:hover {
   color: #fff;
 }
 .ant-tag-orange {
-  color: #fa8c16;
+  color: @heading-color;
   background: #fff7e6;
   border-color: #ffd591;
 }
 .ant-tag-orange-inverse {
-  background: #fa8c16;
-  border-color: #fa8c16;
+  background: @heading-color;
+  border-color: @heading-color;
   color: #fff;
 }
 .ant-tag-yellow {
@@ -5602,13 +6209,13 @@ tr.ant-table-expanded-row:hover {
   color: #fff;
 }
 .ant-tag-blue {
-  color: @primary-color;
-  background: color(~`colorPalette("@{primary-color}", 1)`);
-  border-color: color(~`colorPalette("@{primary-color}", 3)`);
+  color: #1890ff;
+  background: #e6f7ff;
+  border-color: #91d5ff;
 }
 .ant-tag-blue-inverse {
-  background: @primary-color;
-  border-color: @primary-color;
+  background: #1890ff;
+  border-color: #1890ff;
   color: #fff;
 }
 .ant-tag-geekblue {
@@ -5715,7 +6322,7 @@ li.ant-time-picker-panel-select-option-disabled:hover {
 }
 .ant-time-picker-input:focus {
   border-color: color(~`colorPalette("@{primary-color}", 5)`);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 55, 91, 0.2);
 }
 .ant-time-picker-input-disabled {
   background-color: #f5f5f5;
@@ -6159,3 +6766,15 @@ li.ant-tree-treenode-disabled > .ant-tree-node-content-wrapper:hover {
 .logo {
   color: @heading-color;
 }
+
+@secondary-color: #0000ff;
+
+@heading-color: #fa8c16;
+
+@text-color-secondary: #eb2f96;
+
+@text-color: #000000;
+
+@primary-color: #00375B;
+
+@secondry-color: #dddddd;
