@@ -8,6 +8,7 @@
     "babel-plugin-import": "^1.7.0",
     "rc-color-picker": "^1.2.6",
     "react": "^16.3.1",
+    "react-app-rewire-antd-theme": "1.0.2",
     "react-app-rewire-less": "^2.1.1",
     "react-app-rewired": "^1.5.0",
     "react-dom": "^16.3.1",
@@ -25,15 +26,12 @@
     }
   },
   "scripts": {
-    "start": "run-p watch start-app",
-    "start-app": "react-app-rewired start",
-    "colors": "node generate-theme.js",
-    "build-colors": "npm run colors && cp public/color.less build/color.less",
+    "start": "react-app-rewired start",
+    "build-colors": "cp public/color.less build/color.less",
     "build-app": "react-app-rewired build",
     "build": "run-p build-app build-colors",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
-    "watch": "npm-watch colors",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -42,6 +40,8 @@
     "gh-pages": "^1.1.0",
     "less-bundle-promise": "1.0.4",
     "npm-run-all": "^4.1.2",
-    "npm-watch": "^0.3.0"
+    "npm-watch": "^0.3.0",
+    "post-compile-webpack-plugin": "^0.1.2",
+    "webpack-shell-plugin": "^0.5.0"
   }
 }
