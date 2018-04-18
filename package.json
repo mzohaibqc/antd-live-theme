@@ -5,10 +5,11 @@
   "private": true,
   "dependencies": {
     "antd": "^3.4.0",
+    "antd-theme-webpack-plugin": "1.0.1",
     "babel-plugin-import": "^1.7.0",
     "rc-color-picker": "^1.2.6",
     "react": "^16.3.1",
-    "react-app-rewire-antd-theme": "1.0.2",
+    "react-app-rewire-antd-theme": "1.0.4",
     "react-app-rewire-less": "^2.1.1",
     "react-app-rewired": "^1.5.0",
     "react-dom": "^16.3.1",
@@ -28,8 +29,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build-colors": "cp public/color.less build/color.less",
-    "build-app": "react-app-rewired build",
-    "build": "run-p build-app build-colors",
+    "build": "react-app-rewired build",
+    "build-app": "run-p build-app build-colors",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

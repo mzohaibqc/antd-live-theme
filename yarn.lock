@@ -157,6 +157,13 @@ ansi-styles@^3.0.0, ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
+antd-theme-webpack-plugin@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.0.1.tgz#5c7eff98b63e82ffec44dd3d9c32cb9a2901d919"
+  dependencies:
+    antd "^3.4.0"
+    less-bundle-promise "1.0.4"
+
 antd@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/antd/-/antd-3.4.0.tgz#ad67872ab3d3e31d32b2b6feabc2fa5f5b27a48e"
@@ -6461,9 +6468,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-app-rewire-antd-theme@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-app-rewire-antd-theme/-/react-app-rewire-antd-theme-1.0.2.tgz#06ea2a42aca2f4c669b8e932cf06b9dc8d62cb07"
+react-app-rewire-antd-theme@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-app-rewire-antd-theme/-/react-app-rewire-antd-theme-1.0.4.tgz#b282b4dc73aa563767033d2bc087d96b48f77cd5"
   dependencies:
     antd "^3.4.1"
 
