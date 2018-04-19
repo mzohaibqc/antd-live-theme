@@ -6,7 +6,7 @@ change in `generate-color.js` file in this project.
 ## Demo
 ![Theme](https://github.com/mzohaibqc/antd-live-theme/blob/master/public/theme.PNG)
 
-https://mzohaibqc.github.io/antd-live-theme/
+https://antd-live-theme.firebaseapp.com/
 
 
 ## Requirements
