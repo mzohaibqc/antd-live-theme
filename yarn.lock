@@ -157,12 +157,14 @@ ansi-styles@^3.0.0, ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-antd-theme-webpack-plugin@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.0.1.tgz#5c7eff98b63e82ffec44dd3d9c32cb9a2901d919"
+antd-theme-webpack-plugin@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.0.3.tgz#5006c8be94679c69f25f11d3dfabc17fc28195c0"
   dependencies:
     antd "^3.4.0"
+    less "^3.0.1"
     less-bundle-promise "1.0.4"
+    postcss "^6.0.21"
 
 antd@^3.4.0:
   version "3.4.0"
@@ -4586,6 +4588,19 @@ less@^2.7.3:
     request "2.81.0"
     source-map "^0.5.3"
 
+less@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/less/-/less-3.0.1.tgz#ba2fea24a5632ccb8c84230d6043c0bf91855e37"
+  optionalDependencies:
+    errno "^0.1.1"
+    graceful-fs "^4.1.2"
+    image-size "~0.5.0"
+    mime "^1.4.1"
+    mkdirp "^0.5.0"
+    promise "^7.1.1"
+    request "2.81.0"
+    source-map "^0.5.3"
+
 less@~2.5.0:
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/less/-/less-2.5.3.tgz#9ff586e8a703515fc18dc99c7bc498d2f3ad4849"
@@ -5902,7 +5917,7 @@ postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.13:
+postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.13, postcss@^6.0.21:
   version "6.0.21"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.21.tgz#8265662694eddf9e9a5960db6da33c39e4cd069d"
   dependencies:
@@ -6468,9 +6483,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-app-rewire-antd-theme@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/react-app-rewire-antd-theme/-/react-app-rewire-antd-theme-1.0.4.tgz#b282b4dc73aa563767033d2bc087d96b48f77cd5"
+react-app-rewire-antd-theme@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-app-rewire-antd-theme/-/react-app-rewire-antd-theme-1.0.5.tgz#681edbe8e539ff456b03a52992a8a0b0996f6dbb"
   dependencies:
     antd "^3.4.1"
 
