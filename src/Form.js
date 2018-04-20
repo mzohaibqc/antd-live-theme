@@ -15,35 +15,26 @@ const RadioGroup = Radio.Group;
 
 class MyForm extends Component {
 
-  state = {
-    vars: {
+  constructor(props) {
+    super(props);
+    let vars = {
       '@primary-color': '#00375B',
       '@secondary-color': '#0000ff',
       '@text-color': '#000000',
       '@text-color-secondary': '#eb2f96',
       '@heading-color': '#fa8c16'
+    };
+    try {
+      vars = JSON.parse(localStorage.getItem('app-theme'));
+    } finally {
+      this.state = { vars };
+      window.less.modifyVars(vars).then(() => {
+      }).catch(error => {
+        message.error(`Failed to update theme`);
+      });
     }
   }
 
-  // componentDidMount = () => {
-  //   let vars = {
-  //     '@primary-color': '#00375B',
-  //     '@secondary-color': '#0000ff',
-  //     '@text-color': '#4D4D4D',
-  //     '@text-color-secondary': '#eb2f96',
-  //     '@heading-color': '#fa8c16'
-  //   };
-  //   try {
-  //     vars = JSON.parse(localStorage.getItem('app-theme'));
-  //   } finally {
-  //     window.less.modifyVars(vars).then(() => {
-  //       this.setState({ vars });
-  //     }).catch(error => {
-  //       this.setState({ vars });
-  //       message.error(`Failed to update theme`);
-  //     });
-  //   }
-  // }
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
