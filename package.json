@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.4.0",
+    "antd-theme-webpack-plugin": "1.0.8",
     "babel-plugin-import": "^1.7.0",
     "rc-color-picker": "^1.2.6",
     "react": "^16.3.1",
