@@ -6,7 +6,16 @@ const options = {
   antDir: path.join(__dirname, './node_modules/antd'),
   varFile: path.join(__dirname, './src/styles/variables.less'),
   mainLessFile: path.join(__dirname, './src/styles/index.less'),
-  themeVariables: ['@primary-color', '@secondary-color', '@text-color', '@text-color-secondary', '@heading-color'],
+  themeVariables: [
+    '@primary-color',
+    '@secondary-color',
+    '@text-color',
+    '@text-color-secondary',
+    '@heading-color',
+    '@layout-body-background',
+    '@btn-primary-bg',
+    '@layout-header-background'
+  ],
   indexFileName: 'index.html'
 }
 module.exports = function override(config, env) {

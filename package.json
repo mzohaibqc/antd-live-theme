@@ -4,12 +4,13 @@
   "homepage": "https://antd-live-theme.firebaseapp.com",
   "private": true,
   "dependencies": {
-    "antd": "^3.4.0",
+    "antd": "^3.5.1",
+    "antd-theme-generator": "1.0.3",
     "babel-plugin-import": "^1.7.0",
-    "rc-color-picker": "^1.2.6",
     "react": "^16.3.1",
-    "react-app-rewire-antd-theme": "1.0.8",
+    "react-app-rewire-antd-theme": "1.1.0",
     "react-app-rewired": "^1.5.0",
+    "react-color": "^2.14.1",
     "react-dom": "^16.3.1",
     "react-scripts": "^1.1.4"
   },
