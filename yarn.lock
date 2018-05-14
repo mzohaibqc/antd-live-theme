@@ -157,14 +157,6 @@ ansi-styles@^3.0.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-antd-theme-generator@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/antd-theme-generator/-/antd-theme-generator-1.0.3.tgz#2a5f294d16453503b84628b6969ed0f4789ef90e"
-  dependencies:
-    less "^3.0.1"
-    less-bundle-promise "1.0.4"
-    postcss "^6.0.21"
-
 antd-theme-generator@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/antd-theme-generator/-/antd-theme-generator-1.0.6.tgz#e98fb61465dff132617ee95613b646cfc5ab0f3c"
@@ -4411,7 +4403,7 @@ less-bundle-promise@1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/less-bundle-promise/-/less-bundle-promise-1.0.4.tgz#680b07bf2396feffff26fe51f91b2415ccaa2c79"
 
-less-loader@^4.0.5, less-loader@^4.1.0:
+less-loader@^4.0.5:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-4.1.0.tgz#2c1352c5b09a4f84101490274fd51674de41363e"
   dependencies:
@@ -4440,19 +4432,6 @@ less@^2.7.2, less@^2.7.3:
     graceful-fs "^4.1.2"
     image-size "~0.5.0"
     mime "^1.2.11"
-    mkdirp "^0.5.0"
-    promise "^7.1.1"
-    request "2.81.0"
-    source-map "^0.5.3"
-
-less@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/less/-/less-3.0.1.tgz#ba2fea24a5632ccb8c84230d6043c0bf91855e37"
-  optionalDependencies:
-    errno "^0.1.1"
-    graceful-fs "^4.1.2"
-    image-size "~0.5.0"
-    mime "^1.4.1"
     mkdirp "^0.5.0"
     promise "^7.1.1"
     request "2.81.0"
