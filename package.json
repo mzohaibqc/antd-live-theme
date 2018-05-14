@@ -4,11 +4,12 @@
   "homepage": "https://antd-live-theme.firebaseapp.com",
   "private": true,
   "dependencies": {
-    "antd": "^3.5.1",
+    "antd": "^3.5.2",
     "antd-theme-generator": "1.0.3",
     "babel-plugin-import": "^1.7.0",
+    "less": "2.7.2",
     "react": "^16.3.1",
-    "react-app-rewire-antd-theme": "1.1.0",
+    "react-app-rewire-antd-theme": "1.1.2",
     "react-app-rewired": "^1.5.0",
     "react-color": "^2.14.1",
     "react-dom": "^16.3.1",
@@ -20,5 +21,8 @@
     "test": "react-app-rewired test --env=jsdom",
     "predeploy": "npm run build",
     "deploy": "firebase deploy"
+  },
+  "devDependencies": {
+    "less-loader": "^4.1.0"
   }
 }

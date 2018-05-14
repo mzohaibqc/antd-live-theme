@@ -14,7 +14,8 @@ const options = {
     '@heading-color',
     '@layout-body-background',
     '@btn-primary-bg',
-    '@layout-header-background'
+    '@layout-header-background',
+    '@menu-bg'
   ],
   indexFileName: 'index.html'
 }
