@@ -99,7 +99,7 @@ class App extends Component {
           type="sketch"
           small
           color={this.state.vars[varName]}
-          position="bottom"
+          position="top"
           presetColors={[
             '#F5222D',
             '#FA541C',
@@ -121,7 +121,8 @@ class App extends Component {
   )
   resetTheme = () => {
     localStorage.setItem('app-theme', '{}');
-    this.setState({ vars: this.state.initialValue });
+    console.log(this.state.vars, this.state.initialValue);
+    this.setState({ vars: { ...this.state.initialValue } });
     window.less
       .modifyVars(this.state.initialValue)
       .catch(error => {

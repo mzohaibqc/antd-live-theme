@@ -77,7 +77,7 @@ export default class ColorPicker extends Component {
     };
 
     if (position === 'top') {
-      styles.wrapper.transform = 'translateY(-100%)';
+      styles.wrapper.transform = 'translate(13%, -50%)';
       styles.wrapper.paddingBottom = 8;
     }
 
