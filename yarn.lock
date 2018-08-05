@@ -165,9 +165,9 @@ antd-theme-generator@1.0.6:
     less-bundle-promise "1.0.4"
     postcss "^6.0.21"
 
-antd-theme-webpack-plugin@1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.1.5.tgz#be80fe29fe1817a997cef76a6b8e11607b3abac7"
+antd-theme-webpack-plugin@1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/antd-theme-webpack-plugin/-/antd-theme-webpack-plugin-1.1.6.tgz#7deb195b9f9d92da9334ebc1f3d74d8bed4cbed6"
   dependencies:
     antd-theme-generator "1.0.6"
     less "^2.7.2"
@@ -6167,11 +6167,11 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-app-rewire-antd-theme@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/react-app-rewire-antd-theme/-/react-app-rewire-antd-theme-1.1.2.tgz#b0a46edfab7bc485c412137545fdb363d035ab6e"
+react-app-rewire-antd-theme@1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/react-app-rewire-antd-theme/-/react-app-rewire-antd-theme-1.1.3.tgz#160301aacfa4c611189fea2de843439fb21eb159"
   dependencies:
-    antd-theme-webpack-plugin "1.1.5"
+    antd-theme-webpack-plugin "1.1.6"
     less-bundle-promise "1.0.4"
     react-app-rewire-less "^2.1.1"
     react-app-rewired "^1.5.0"

@@ -16,7 +16,8 @@ const options = {
     '@btn-primary-bg',
     '@layout-header-background'
   ],
-  indexFileName: 'index.html'
+  indexFileName: 'index.html',
+  publicPath: '.'
 }
 module.exports = function override(config, env) {
   config = updateConfig(config, env, options)
