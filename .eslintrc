@@ -1,0 +1,16 @@
+{
+  "extends": "react-app",
+  "parser": "babel-eslint",
+  "rules": {
+    "quotes": [2, "single", "avoid-escape"],
+    "globals": {
+      "document": true,
+      "window": true,
+      "FileReader": true
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  }
+}
