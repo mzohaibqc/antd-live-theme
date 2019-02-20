@@ -1,5 +1,5 @@
 {
-  "name": "antd-live-theme",
+  "name": "cra2-antd",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,6 +25,13 @@
   "devDependencies": {
     "@rescripts/cli": "0.0.10",
     "@rescripts/rescript-env": "0.0.5",
-    "babel-plugin-import": "^1.11.0"
-  }
+    "@rescripts/rescript-use-babel-config": "0.0.5",
+    "babel-plugin-import": "^1.11.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "node-sass": "^4.11.0"
+  },
+  "rescripts": [
+    ".rescriptsrc.js"
+  ]
 }
