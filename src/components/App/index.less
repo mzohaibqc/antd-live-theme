@@ -1,0 +1,77 @@
+@import "../../styles/variables";
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .ant-layout-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .logo {
+      width: 160px;
+      height: 31px;
+      float: left;
+      color: #ffffff;
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 576px) {
+      padding: 0 20px;
+    }
+  }
+  > .ant-layout-content {
+    // flex: 1;
+    margin-top: 64px;
+    background: #ffffff;
+    height: calc(100vh - 64px - 60px);
+    // height: auto;
+    // overflow: hidden;
+    
+
+    .ant-layout {
+      height: 100%;
+      overflow-y: auto;
+      
+    }
+
+    .ant-layout-sider {
+      height: 100%;
+      // border-right: solid 2px #ddd;
+      display: flex;
+      justify-items: center;
+      justify-content: center;
+      // padding: 20px;
+
+      .color-row {
+        padding: 5px 5px 5px 20px;
+        &:nth-of-type(1) {
+          padding-top: 20px;
+        }
+      }
+      .ant-layout-sider-zero-width-trigger-left {
+        z-index: 1000;
+        margin-top: -60px;
+      }
+      .theme-heading {
+        padding: 20px;
+        width: 100%;
+        .title {
+          color: #ffffff;
+        }
+      }
+    }
+    .ant-layout-content {
+      background: #ffffff;
+      padding: 20px;
+    }
+  }
+  .ant-layout-footer {
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,11 +1,15 @@
 {
-  "name": "cra2-antd",
+  "name": "cra-antd",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "antd": "^3.13.5",
+    "antd-theme-webpack-plugin": "^1.2.0",
+    "less-vars-to-js": "^1.3.0",
     "react": "^16.8.2",
+    "react-color": "^2.17.0",
     "react-dom": "^16.8.2",
+    "react-responsive": "^6.1.1",
     "react-scripts": "2.1.5"
   },
   "scripts": {
@@ -28,8 +32,7 @@
     "@rescripts/rescript-use-babel-config": "0.0.5",
     "babel-plugin-import": "^1.11.0",
     "less": "^3.9.0",
-    "less-loader": "^4.1.0",
-    "node-sass": "^4.11.0"
+    "less-loader": "^4.1.0"
   },
   "rescripts": [
     ".rescriptsrc.js"
