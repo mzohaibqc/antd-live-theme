@@ -15,7 +15,10 @@
   "scripts": {
     "start": "rescripts start",
     "build": "rescripts build",
-    "test": "rescripts test"
+    "test": "rescripts test",
+    "login": "firebase login",
+    "predeploy": "npm run build",
+    "deploy": "firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,6 +34,7 @@
     "@rescripts/rescript-env": "0.0.5",
     "@rescripts/rescript-use-babel-config": "0.0.5",
     "babel-plugin-import": "^1.11.0",
+    "firebase-tools": "^6.5.3",
     "less": "^3.9.0",
     "less-loader": "^4.1.0"
   },

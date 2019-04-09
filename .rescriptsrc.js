@@ -10,13 +10,13 @@ module.exports = [
     const newConfig = config;
     let rule = newConfig.module.rules.find(rule => rule.oneOf);
     const paletteLess = fs.readFileSync('./src/styles/variables.less', 'utf8');
-
+    const variables = lessToJs(paletteLess);
     const options = {
       antDir: path.join(__dirname, './node_modules/antd'),
       stylesDir: path.join(__dirname, './src/styles'),
       varFile: path.join(__dirname, './src/styles/variables.less'),
       mainLessFile: path.join(__dirname, './src/styles/index.less'),
-      themeVariables: ['@primary-color', '@secondry-color', '@text-color-secondary', '@text-color'],
+      themeVariables: Object.keys(variables), // ['@primary-color', '@secondry-color', '@text-color-secondary', '@text-color', '@processing-color', '@layout-header-background', '@heading-color', '@btn-primary-bg'],
       indexFileName: 'index.html',
       generateOnce: false
     }
@@ -24,7 +24,7 @@ module.exports = [
     
     const themePlugin = new AntDesignThemePlugin(options);
     
-    const variables = lessToJs(paletteLess);
+    
     rule.oneOf.unshift({
       test: /\.less$/,
       use: [

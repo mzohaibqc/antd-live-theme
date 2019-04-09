@@ -1,21 +1,21 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import {
   Row,
   Col,
   Icon,
-  Menu,
   Breadcrumb,
   Layout,
   Form,
   Select,
   Switch,
   Radio,
-  Card,
   message,
   Button,
   Upload,
   DatePicker,
-  Progress
+  Progress,
+  Timeline,
+  Checkbox
 } from 'antd';
 import moment from 'moment';
 
@@ -40,7 +40,9 @@ class App extends Component {
       '@text-color-secondary': '#eb2f96',
       '@heading-color': '#fa8c16',
       '@layout-header-background': '#000000',
-      '@btn-primary-bg': '#397dcc'
+      '@layout-sider-background': '#cccccc',
+      '@btn-primary-bg': '#397dcc',
+      '@processing-color': '#397dcc'
     };
     let vars = {};
 
@@ -69,6 +71,7 @@ class App extends Component {
       }
     });
   };
+
   normFile = e => {
     console.log('Upload event:', e);
     if (Array.isArray(e)) {
@@ -76,11 +79,13 @@ class App extends Component {
     }
     return e && e.fileList;
   };
+
   onChangeComplete = (varName, color) => {
     const { vars } = this.state;
     vars[varName] = color;
     this.setState({ vars });
   };
+
   handleColorChange = (varname, color) => {
     const { vars } = this.state;
     if (varname) vars[varname] = color;
@@ -97,14 +102,19 @@ class App extends Component {
       });
   };
 
-  getColorPicker = varName => (
+  onCollapse = collapsed => {
+    this.setState({ collapsed });
+    console.log('onCollapse', collapsed);
+  }
+
+  getColorPicker = (varName, position) => (
     <Row className="color-row" key={varName}>
-      <Col xs={4}>
+      <Col xs={4} className="color-palette">
         <ColorPicker
           type="sketch"
           small
           color={this.state.vars[varName]}
-          position="right"
+          position={position || 'right'}
           presetColors={[
             '#F5222D',
             '#FA541C',
@@ -122,7 +132,7 @@ class App extends Component {
           onChangeComplete={color => this.handleColorChange(varName, color)}
         />
       </Col>
-      <Col xs={20}>{varName}</Col>
+      <Col className="color-name" xs={20}>{varName}</Col>
     </Row>
   );
 
@@ -136,8 +146,9 @@ class App extends Component {
   };
 
   render() {
-    const colorPickers = Object.keys(this.state.vars).map(varName => (
-      this.getColorPicker(varName)
+    const { collapsed } = this.state;
+    const colorPickers = Object.keys(this.state.vars).map((varName, index) => (
+      this.getColorPicker(varName, index > 3 ? 'top': 'right')
     ));
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
@@ -152,18 +163,20 @@ class App extends Component {
             <Sider
               theme="dark"
               breakpoint="lg"
-              collapsedWidth="0"
-              width={250}
+              collapsedWidth={40}
+              collapsed={collapsed}
+              width={300}
               onBreakpoint={broken => {
                 console.log(broken);
+                this.onCollapse(broken);
               }}
-              onCollapse={(collapsed, type) => {
-                console.log(collapsed, type);
-              }}
+              onCollapse={this.onCollapse}
             >
                 <Row className="theme-heading">
+                 {<Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} onClick={() => this.onCollapse(!collapsed)} />}
                   <h3 className="title">Choose Theme Colors</h3>
                 </Row>
+               
                 {colorPickers}
             </Sider>
             <Content style={{ padding: '0 24px', minHeight: 280 }}>
@@ -173,9 +186,9 @@ class App extends Component {
                 <Breadcrumb.Item>App</Breadcrumb.Item>
               </Breadcrumb>
               <Row>
-                <Col xs={24} sm={{ span: 15, offset: 3 }}>
+                <Col xs={24} lg={{ span: 15, offset: 3 }}>
                   <Form onSubmit={this.handleSubmit}>
-                    <Col xs={24} sm={12}>
+                    <Col xs={24} md={12}>
                       <FormItem {...formItemLayout} label="Select[multiple]">
                         {getFieldDecorator('select-multiple', {
                           initialValue: ['red'],
@@ -254,20 +267,52 @@ class App extends Component {
                         )}
                       </FormItem>
                       <FormItem wrapperCol={{ span: 12, offset: 6 }}>
-                        <Button type="default">Cancel</Button>
+                        <Button type="default" style={{ marginRight: 15 }}>Cancel</Button>
                         <Button type="primary" htmlType="submit">
                           Submit
                         </Button>
                       </FormItem>
+                      
                       <Row
                         type="flex"
                         justify="center"
+                      >
+                        <Checkbox checked>One</Checkbox>
+                        <Checkbox >Two</Checkbox>
+                        <Checkbox >Three</Checkbox>
+
+                      </Row>
+                      <Row
+                        type="flex"
+                        justify="space-around"
                         className="secondary-color"
                       >
                         color : @secondary-color;
+                      <Switch checkedChildren={<Icon type="check" />} unCheckedChildren={<Icon type="close" />} defaultChecked />
+
                       </Row>
+
                     </Col>
+                   
                   </Form>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={24} lg={{ span: 9, offset: 3 }} style={{ marginTop: 15 }}>
+                  <Timeline>
+                    <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+                    <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+                    <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
+                    <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+                  </Timeline>
+                </Col>
+                <Col xs={24} lg={{ span: 12 }} style={{ marginTop: 15 }}>
+                  <Timeline>
+                    <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+                    <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+                    <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
+                    <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+                  </Timeline>
                 </Col>
               </Row>
             </Content>
